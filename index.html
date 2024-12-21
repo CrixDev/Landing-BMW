@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚗Auto Scroll</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        const video = document.querySelector('video');
+
+        let maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        });
+      
+        window.addEventListener('scroll', ()=>{
+
+            const scrollPosition = window.scrollY
+
+            const scrollFraction = scrollPosition /maxScroll;
+
+            video.currentTime = scrollFraction * video.duration
+
+        });
+
+    </script>
+
+
+</head>
+<body>
+    
+<body>
+    <main>
+        <header>
+            <img src="LOGO.png" alt="BMW"">
+        </header>
+
+        <video src="Automovil.mp4"></video>
+
+    </main>
+</body>
+
+</body>
+</html>
